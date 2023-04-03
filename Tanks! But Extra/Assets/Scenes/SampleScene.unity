@@ -644,15 +644,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1411792975071717659, guid: 5f1cb897a4f65e340b765afde744e155, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.255558
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 1411792975071717659, guid: 5f1cb897a4f65e340b765afde744e155, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0000038146973
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1411792975071717659, guid: 5f1cb897a4f65e340b765afde744e155, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 32.43891
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 1411792975071717659, guid: 5f1cb897a4f65e340b765afde744e155, type: 3}
       propertyPath: m_LocalRotation.w
@@ -682,6 +682,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1610752240108841729, guid: 5f1cb897a4f65e340b765afde744e155, type: 3}
+      propertyPath: m_Radius
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2333650659643322311, guid: 5f1cb897a4f65e340b765afde744e155, type: 3}
       propertyPath: m_EnemySpawnPoint
       value: 
@@ -706,10 +710,18 @@ PrefabInstance:
       propertyPath: _waypoints.Array.data[3]
       value: 
       objectReference: {fileID: 197312796}
+    - target: {fileID: 3127278154720447253, guid: 5f1cb897a4f65e340b765afde744e155, type: 3}
+      propertyPath: m_ShootDelay
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6160595467128835304, guid: 5f1cb897a4f65e340b765afde744e155, type: 3}
       propertyPath: m_PlayerHealth
       value: 
       objectReference: {fileID: 509902470}
+    - target: {fileID: 6160595467128835304, guid: 5f1cb897a4f65e340b765afde744e155, type: 3}
+      propertyPath: m_StartingHealth
+      value: 300
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f1cb897a4f65e340b765afde744e155, type: 3}
 --- !u!1 &247245277 stripped
@@ -2470,7 +2482,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 872583046}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -3108,21 +3120,25 @@ PrefabInstance:
       propertyPath: m_PlayerHealth
       value: 
       objectReference: {fileID: 509902470}
+    - target: {fileID: 2216722956316277143, guid: dddbd0cca57c2b44a993ac02e57cefac, type: 3}
+      propertyPath: m_StartingHealth
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2500332013186330942, guid: dddbd0cca57c2b44a993ac02e57cefac, type: 3}
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2500332013186330942, guid: dddbd0cca57c2b44a993ac02e57cefac, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.640203
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2500332013186330942, guid: dddbd0cca57c2b44a993ac02e57cefac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0000038146973
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2500332013186330942, guid: dddbd0cca57c2b44a993ac02e57cefac, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 24.321777
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 2500332013186330942, guid: dddbd0cca57c2b44a993ac02e57cefac, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3151,6 +3167,10 @@ PrefabInstance:
     - target: {fileID: 2500332013186330942, guid: dddbd0cca57c2b44a993ac02e57cefac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2664256355634859263, guid: dddbd0cca57c2b44a993ac02e57cefac, type: 3}
+      propertyPath: m_CloseDistance
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2664256355634859263, guid: dddbd0cca57c2b44a993ac02e57cefac, type: 3}
       propertyPath: m_EnemySpawnPoint
@@ -3214,7 +3234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7776370151952472133, guid: dddbd0cca57c2b44a993ac02e57cefac, type: 3}
       propertyPath: m_ShootDelay
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dddbd0cca57c2b44a993ac02e57cefac, type: 3}
@@ -3850,6 +3870,7 @@ MonoBehaviour:
   - {fileID: 717459305}
   - {fileID: 8365383}
   - {fileID: 770927917}
+  m_GameState: 0
 --- !u!4 &1499800011
 Transform:
   m_ObjectHideFlags: 0
@@ -5330,7 +5351,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7091552162616587128, guid: b7dd2e356e5f72e4086ac140c90bad1c, type: 3}
       propertyPath: m_CloseDistance
-      value: 15
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7091552162616587128, guid: b7dd2e356e5f72e4086ac140c90bad1c, type: 3}
       propertyPath: m_EnemySpawnPoint
@@ -5444,5 +5465,9 @@ PrefabInstance:
       propertyPath: m_PlayerHealth
       value: 
       objectReference: {fileID: 509902470}
+    - target: {fileID: 7091552164408537771, guid: b7dd2e356e5f72e4086ac140c90bad1c, type: 3}
+      propertyPath: m_ShootDelay
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7dd2e356e5f72e4086ac140c90bad1c, type: 3}

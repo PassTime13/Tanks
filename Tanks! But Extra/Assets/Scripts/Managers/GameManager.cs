@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
         
     };
 
-    private GameState m_GameState;
+    public GameState m_GameState;
     public GameState State {  get { return m_GameState; } }
 
     private void Awake()
@@ -71,6 +71,12 @@ public class GameManager : MonoBehaviour
             case GameState.Start:
                 if (Input.GetKeyUp(KeyCode.Return) == true)
                 {
+                    for (int i = 0; i < m_Tanks.Length; i++)
+                    {
+                        m_Tanks[i].SetActive(false);
+
+                    }
+
                     m_TimerText.gameObject.SetActive(true);
                     m_PlayerHealth.gameObject.SetActive(true);
                     m_MessageText.text = "";
@@ -87,7 +93,6 @@ public class GameManager : MonoBehaviour
 
             case GameState.Playing:
                 bool isGameOver = false;
-
 
 
                 m_gameTime += Time.deltaTime;
@@ -113,6 +118,12 @@ public class GameManager : MonoBehaviour
 
                     m_NewGameButton.gameObject.SetActive(true);
                     m_HighScoresButton.gameObject.SetActive(true);
+
+                    for (int i = 0; i < m_Tanks.Length; i++)
+                    {
+                        m_Tanks[i].SetActive(false);
+
+                    }
 
                     if (IsPlayerDead() == true)
                     {
@@ -143,7 +154,7 @@ public class GameManager : MonoBehaviour
 
                     for (int i = 0; i < m_Tanks.Length; i++)
                     {
-                        m_Tanks[i].SetActive(true);
+                        m_Tanks[i].SetActive(false);
                         
                     }
                     
@@ -221,7 +232,10 @@ public class GameManager : MonoBehaviour
         m_MessageText.text = "";
 
         m_HighScoresButton.gameObject.SetActive(false);
+        m_NewGameButton.gameObject.SetActive(false);
         m_HighScorePanel.SetActive(true);
+        m_NewGameButton.gameObject.SetActive(true);
+
 
         string text = "";
         for (int i = 0; i < m_HighScores.scores.Length; i++)

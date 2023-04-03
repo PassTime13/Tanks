@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class EnemyTankMovement : MonoBehaviour
 {
     //tank will stop moving towarsds the player once it reaches this distance
-    public float m_CloseDistance = 15f;
+    public float m_CloseDistance = 8f;
     //the tanks turret object
     public Transform m_Turret;
 
@@ -39,12 +39,18 @@ public class EnemyTankMovement : MonoBehaviour
 
     }
 
-    private void OnEnable()
+    public void OnEnable()
     {
         //when the tank is turned on, make sure it is not kinematic
         m_Rigidbody.isKinematic = false;
 
+        //reset it at the spawn point
         EnemySpawn();
+
+        //ensure they aren't just going to spawn and target straight to the player if the last game ended with follow = true
+        m_Follow = false;
+
+        
 
     }
 
@@ -96,6 +102,7 @@ public class EnemyTankMovement : MonoBehaviour
     {
         if (m_Follow == false)
         {
+
             if (_waypoints.Count <= 0)
             {
                 return;
@@ -107,6 +114,7 @@ public class EnemyTankMovement : MonoBehaviour
                 if (Vector3.Distance(transform.position, _waypoints[currentWaypoint].position) > 5)
                 {
                     m_NavAgent.SetDestination(_waypoints[currentWaypoint].position);
+                    m_NavAgent.isStopped = false;
 
                 }
                
@@ -114,7 +122,6 @@ public class EnemyTankMovement : MonoBehaviour
                 else
                 {
                     currentWaypoint++;
-
 
                 }
 
@@ -132,14 +139,17 @@ public class EnemyTankMovement : MonoBehaviour
         {
             //get distance from player to enemy tank
             float distance = (m_Player.transform.position - transform.position).magnitude;
+
             //if distance is less than stop distance, then stop moving
             if (distance > m_CloseDistance)
             {
                 m_NavAgent.SetDestination(m_Player.transform.position);
                 m_NavAgent.isStopped = false;
+                
 
             }
 
+            //if distance between enemy and player is less than close distance tank will stop and shoot
             else 
             {
                 m_NavAgent.isStopped = true;

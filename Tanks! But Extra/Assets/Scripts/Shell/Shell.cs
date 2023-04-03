@@ -38,19 +38,47 @@ public class Shell : MonoBehaviour
             //add an explosion force
             targetRigidbody.AddExplosionForce(m_ExplosionForce, transform.position, m_ExplosionRadius);
 
-            //find the tankhealth script associated with the rigidbody
-            TankHealth targetHealth = targetRigidbody.GetComponent<TankHealth>();
-
-            if (targetHealth != null)
+            if (targetRigidbody.tag == "Player")
             {
-                //calculate the amount of damage that the target should take based on its distance from the shell.
-                float damage = CalculateDamage(targetRigidbody.position);
+                //find the tankhealth script associated with the rigidbody
+                TankHealthPlayer targetHealthPlayer = targetRigidbody.GetComponent<TankHealthPlayer>();
 
-                //Deal this damage to the tank
-                targetHealth.TakeDamage(damage);
-                
+                if (targetHealthPlayer != null)
+                {
+                    //calculate the amount of damage that the target should take based on its distance from the shell.
+                    float damage = CalculateDamage(targetRigidbody.position);
+
+                    //Deal this damage to the tank
+                    targetHealthPlayer.TakeDamage(damage);
+
+                }
+
             }
-            
+
+
+
+            else
+            {
+                //find the tankhealth script associated with the rigidbody
+                TankHealth targetHealth = targetRigidbody.GetComponent<TankHealth>();
+
+                if (targetHealth != null)
+                {
+                    //calculate the amount of damage that the target should take based on its distance from the shell.
+                    float damage = CalculateDamage(targetRigidbody.position);
+
+                    //Deal this damage to the tank
+                    targetHealth.TakeDamage(damage);
+
+                }
+
+            }
+                
+                
+                
+
+               
+
         }
 
         //Unparent the particles from the shell
