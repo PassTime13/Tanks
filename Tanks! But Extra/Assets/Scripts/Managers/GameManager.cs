@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
                 {
                     for (int i = 0; i < m_Tanks.Length; i++)
                     {
-                        m_Tanks[i].SetActive(false);
+                        m_Tanks[i].SetActive(true);
 
                     }
 

@@ -118,7 +118,6 @@ public class EnemyTankMovement : MonoBehaviour
 
                 }
                
-
                 else
                 {
                     currentWaypoint++;
@@ -145,7 +144,6 @@ public class EnemyTankMovement : MonoBehaviour
             {
                 m_NavAgent.SetDestination(m_Player.transform.position);
                 m_NavAgent.isStopped = false;
-                
 
             }
 
